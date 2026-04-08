@@ -680,6 +680,89 @@
     margin-bottom: 4px;
   }
 
+  /* ─── APPS ─── */
+  #apps {
+    padding: 100px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .apps-intro {
+    margin-bottom: 56px;
+  }
+  .apps-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .app-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 40px 40px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+  }
+  .app-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--accent-copper);
+    transition: height 0.4s ease;
+  }
+  .app-card:hover {
+    box-shadow: 0 12px 48px rgba(44, 40, 36, 0.1);
+    transform: translateY(-3px);
+  }
+  .app-card:hover::before {
+    height: 100%;
+  }
+  .app-card-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-copper);
+  }
+  .app-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--charcoal);
+    line-height: 1.2;
+  }
+  .app-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    flex: 1;
+  }
+  .app-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--charcoal);
+    letter-spacing: 0.05em;
+    margin-top: 8px;
+  }
+  .app-card-cta svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+  }
+  .app-card:hover .app-card-cta svg {
+    transform: translateX(4px);
+  }
+
   /* ─── CONTACT ─── */
   .contact-section {
     background: var(--charcoal);
@@ -914,6 +997,8 @@
     .hero-meta { flex-direction: column; gap: 20px; }
     section { padding: 60px 24px; }
     .services-grid { grid-template-columns: 1fr; }
+    .apps-grid { grid-template-columns: 1fr; }
+    #apps { padding: 60px 24px; }
     .process-steps { grid-template-columns: 1fr; }
     .case-grid { grid-template-columns: 1fr; }
     .contact-section { padding: 60px 24px; }
@@ -934,6 +1019,7 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="#work">Work</a></li>
+    <li><a href="#apps">Apps</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -941,8 +1027,8 @@
 <!-- ─── HERO ─── -->
 <section class="hero" id="hero">
   <div class="hero-eyebrow">Claudia Brown LLC</div>
-  <h1>The infrastructure behind your client's <em>winning</em> verdict.</h1>
-  <p class="hero-sub">Live voir dire dashboards. Real-time tracking for mock trials and focus groups. Automated deliverables and analysis reporting. The possibilities are <em>infinite.</em></p>
+  <h1>The infrastructure behind your firm's <em>winning</em> verdict.</h1>
+  <p class="hero-sub">Live voir dire dashboards. Matter management built for the pace of litigation. Automated deliverables, billing workflows, and analysis reporting. The infrastructure <em>serious</em> firms run on.</p>
   <div class="hero-line"></div>
   <div class="hero-meta">
     <div class="hero-meta-item">
@@ -951,7 +1037,7 @@
     </div>
     <div class="hero-meta-item">
       <span class="hero-meta-label">Focus</span>
-      <span class="hero-meta-value">Trial Consultants & Litigation Teams</span>
+      <span class="hero-meta-value">Litigation Firms &amp; Trial Teams</span>
     </div>
     <div class="hero-meta-item">
       <span class="hero-meta-label">Approach</span>
@@ -965,38 +1051,38 @@
 <!-- ─── SERVICES ─── -->
 <section id="services">
   <div class="animate-on-scroll">
-    <h2 class="section-title">I build the structured systems behind<br>complex litigation matters.</h2>
-    <p class="section-desc">Case management systems. Jury research. Reports and deliverables. Project execution. Automated billing. Onboarding workflows. Every component organized. Every workflow accounted for. Built for the pace and precision <em>successful</em> litigation demands.</p>
+    <h2 class="section-title">I build the structured systems that keep<br>complex litigation moving.</h2>
+    <p class="section-desc">Matter and case management. Jury research and trial prep. Reports and deliverables. Automated billing. Onboarding workflows. Every component organized. Every workflow accounted for — built for the pace and precision that <em>winning</em> litigation demands.</p>
   </div>
   <div class="services-grid">
     <div class="service-card animate-on-scroll">
       <span class="service-icon">&#9670;</span>
       <h3>Live Trial Dashboards</h3>
-      <p>Jury tracking. Position monitoring. Seating charts. Verdict tables. Survey analysis. Built to perform under courtroom pressure — not just look good in a demo.</p>
+      <p>Jury tracking. Position monitoring. Seating charts. Verdict tables. Survey analysis. Built to perform under courtroom pressure — whether you're running a mock trial or selecting a jury in active proceedings.</p>
       <span class="service-tag">Supabase · Netlify · JS</span>
     </div>
     <div class="service-card animate-on-scroll">
       <span class="service-icon">&#9674;</span>
       <h3>Automation Workflows</h3>
-      <p>Clio to Notion. DocuSign to your matter database. Time entries to invoices. The manual work disappears. The data still moves.</p>
+      <p>Case management to your matter database. DocuSign to your files. Time entries to invoices. The manual work disappears. The data still moves — across your whole practice.</p>
       <span class="service-tag">Zapier · Clio · Notion · Claude AI</span>
     </div>
     <div class="service-card animate-on-scroll">
       <span class="service-icon">&#9702;</span>
       <h3>Research & Deliverables</h3>
-      <p>Survey analysis, juror frequency charts, damages breakdowns. Litigation-grade reports generated directly from case data — not rebuilt from scratch every time.</p>
+      <p>Survey analysis, juror frequency charts, damages breakdowns, trial prep summaries. Litigation-grade reports generated directly from case data — not rebuilt from scratch every time.</p>
       <span class="service-tag">Charts · DOCX · PDF</span>
     </div>
     <div class="service-card animate-on-scroll">
       <span class="service-icon">&#8862;</span>
       <h3>Matter Management</h3>
-      <p>Cases, financials, contracts, deadlines. One system. Not five tabs and a spreadsheet held together by memory.</p>
+      <p>Cases, contacts, financials, contracts, deadlines. One system your whole team can rely on. Not five tabs and a spreadsheet held together by whoever remembered to update it.</p>
       <span class="service-tag">Notion · Airtable · Monday.com · Slack</span>
     </div>
     <div class="service-card animate-on-scroll">
       <span class="service-icon">&#9651;</span>
       <h3>Billing & Financial Tracking</h3>
-      <p>Invoicing workflows that actually run. Time-tracking that actually gets used. Financial reporting that connects your billing platform to your books.</p>
+      <p>Invoicing workflows that actually run. Time-tracking that actually gets used. Financial reporting that connects your billing platform to your books — and holds up at the end of every matter.</p>
       <span class="service-tag">Harvest · QuickBooks · Xero</span>
     </div>
     <div class="service-card animate-on-scroll">
@@ -1004,6 +1090,12 @@
       <h3>Custom Integrations</h3>
       <p>If your tools don't talk to each other, I make them. API connections, field mappings, data syncs — built around how your firm actually operates.</p>
       <span class="service-tag">Dropbox · M365 · SharePoint · Canva · API</span>
+    </div>
+    <div class="service-card animate-on-scroll">
+      <span class="service-icon">&#9671;</span>
+      <h3>On-Site Facilitation</h3>
+      <p>Available to observe and moderate focus groups and mock trials. Structured facilitation that keeps proceedings on track and surfaces what the data alone won't show.</p>
+      <span class="service-tag">Focus Groups · Mock Trials · Chicago &amp; Nationwide</span>
     </div>
   </div>
 </section>
@@ -1052,7 +1144,7 @@
     <div class="case-card animate-on-scroll" onclick="openGate(0)">
       <div class="case-card-header">
         <div class="case-category">Live Trial Dashboard</div>
-        <h3>Mock Trial Research Platform</h3>
+        <h3>Trial Research & Reporting Platform</h3>
         <div class="case-client">Trial Consulting Firm — Civil Litigation</div>
       </div>
       <div class="case-card-body">
@@ -1067,7 +1159,7 @@
     <div class="case-card animate-on-scroll" onclick="openGate(1)">
       <div class="case-card-header">
         <div class="case-category">Automation & Integration</div>
-        <h3>Firm-Wide Command Center</h3>
+        <h3>Practice-Wide Command Center</h3>
         <div class="case-client">Trial Consulting Firm — Operations</div>
       </div>
       <div class="case-card-body">
@@ -1082,7 +1174,7 @@
     <div class="case-card animate-on-scroll" onclick="openGate(2)">
       <div class="case-card-header">
         <div class="case-category">Courtroom Technology</div>
-        <h3>Live Voir Dire Dashboard</h3>
+        <h3>Live Jury Selection Dashboard</h3>
         <div class="case-client">Trial Consulting Firm — Jury Selection</div>
       </div>
       <div class="case-card-body">
@@ -1097,7 +1189,7 @@
     <div class="case-card animate-on-scroll" onclick="openGate(3)">
       <div class="case-card-header">
         <div class="case-category">Billing & Workflow</div>
-        <h3>Billing System Migration</h3>
+        <h3>Billing & Financial Workflow Rebuild</h3>
         <div class="case-client">Trial Consulting Firm — Finance</div>
       </div>
       <div class="case-card-body">
@@ -1111,6 +1203,39 @@
 
   </div>
 </section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- ─── APPS ─── -->
+<section id="apps">
+  <div class="apps-intro animate-on-scroll">
+    <div class="section-label">Built Tools</div>
+    <h2 class="section-title">Ready to deploy.<br>Built for the field.</h2>
+    <p class="section-desc">Two production-grade applications built specifically for trial work — available to license and deploy for your firm.</p>
+  </div>
+  <div class="apps-grid">
+    <a href="/apps/voir-dire" class="app-card animate-on-scroll">
+      <div class="app-card-eyebrow">Jury Selection</div>
+      <h3>Live Voir Dire Dashboard</h3>
+      <p>Rate jurors in real time. Track strikes. Coordinate the team. Profile demographics. Built and pressure-tested during active federal court proceedings — holds under courtroom conditions.</p>
+      <div class="app-card-cta">
+        View live demo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </a>
+    <a href="/apps/juror-intake" class="app-card animate-on-scroll">
+      <div class="app-card-eyebrow">Mock Trial &amp; Focus Groups</div>
+      <h3>Live Juror Intake Dashboard</h3>
+      <p>Capture juror data the moment they walk in. Manage check-in, demographics, and pre-session intake for mock trials and focus groups — live, from any device in the room.</p>
+      <div class="app-card-cta">
+        View live demo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </a>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div></div>
 
 <!-- ─── CONTACT ─── -->
 <section class="contact-section" id="contact">
@@ -1152,7 +1277,7 @@
     <button class="case-detail-close" onclick="closeCaseDetail(0)">&times;</button>
     <div class="case-detail-top">
       <div class="case-category">Live Trial Dashboard</div>
-      <h2>Mock Trial Research Platform</h2>
+      <h2>Trial Research & Reporting Platform</h2>
       <div class="case-client">Trial Consulting Firm — Civil Litigation</div>
     </div>
     <div class="case-detail-body">
@@ -1187,7 +1312,7 @@
     <button class="case-detail-close" onclick="closeCaseDetail(1)">&times;</button>
     <div class="case-detail-top">
       <div class="case-category">Automation & Integration</div>
-      <h2>Firm-Wide Command Center</h2>
+      <h2>Practice-Wide Command Center</h2>
       <div class="case-client">Trial Consulting Firm — Operations</div>
     </div>
     <div class="case-detail-body">
@@ -1219,7 +1344,7 @@
     <button class="case-detail-close" onclick="closeCaseDetail(2)">&times;</button>
     <div class="case-detail-top">
       <div class="case-category">Courtroom Technology</div>
-      <h2>Live Voir Dire Dashboard</h2>
+      <h2>Live Jury Selection Dashboard</h2>
       <div class="case-client">Trial Consulting Firm — Jury Selection</div>
     </div>
     <div class="case-detail-body">
@@ -1251,7 +1376,7 @@
     <button class="case-detail-close" onclick="closeCaseDetail(3)">&times;</button>
     <div class="case-detail-top">
       <div class="case-category">Billing & Workflow</div>
-      <h2>Billing System Migration</h2>
+      <h2>Billing & Financial Workflow Rebuild</h2>
       <div class="case-client">Trial Consulting Firm — Finance</div>
     </div>
     <div class="case-detail-body">
